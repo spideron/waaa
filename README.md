@@ -1,11 +1,14 @@
 Web Application and API (waaa)
-======
+=============================
 
 Installation
+------------
+```bash
 npm install waaa
-
+```
 
 The why and how
+---------------
 Problem 1: There are many cases where in the development process, the body which makes the html & css are not part of
  the team which actually need to embed the content into a project.
  There are times, when a developer takes the html content and change it to fit to the current project/framework/templates
@@ -34,13 +37,16 @@ in cases you need to implement your own web server logic.
 
 
 Basic usage
+-----------
 The following code will start a web server with the default parameters.
 
+```javascript
 var waaa = require('waaa');
 waaa.start();
-
+```
 
 Web server parameters
+---------------------
 The following parameters can be supplied to the web server
 appFolder (String) - the root folder of the site/application (i.e. /var/www/, /root/my_project/site, __dirname, etc.)
 confFolder (String) - the folder of the configuration files (i.e. /var/www/conf, /root/my_project/site/conf, __dirname + '/conf/', etc.)
@@ -48,15 +54,17 @@ usePages (Boolean) - enable the pages handling. true by default. When using this
 useModules (Boolean) - enable the auto API handling. true by default. When using this feature, a valid modules.json must exist in the configuration folder
 port (Integer) - The web server port. default is 80.
 
+```javascript
 var waaa = require('waaa'),
     options = {appFolder: __dirname, confFolder: __dirname + '/config/', port:8080};
 
 waaa.start(options);
-
+```
 
 Configuration files
-pages.json
-
+-------------------
+### pages.json
+```javascript
 {
     "master":{
         "default":{
@@ -93,6 +101,7 @@ pages.json
         }
     }
 }
+```
 
 master - [optional] list of master pages
     [master_name] - name of a master pages settings
@@ -111,8 +120,8 @@ pages - [required] list of pages
                 attr - [optional] - list of key value collection to be used as attributes on the link element
 
 
-modules.js
-
+### modules.js
+```javascript
 {
     "location":"/modules/",
     "modules":{
@@ -122,6 +131,7 @@ modules.js
         }
     }
 }
+```
 
 location - [required] a relative path inside the app folder to the javascript modules
 modules - [required] list of modules to expose
@@ -134,6 +144,7 @@ modules - [required] list of modules to expose
 
 
 Templates
+---------
 Master pages are optional but when they are used, there are very basic rules to follow.
 1. In the master page declare an element with the id of "content", that's where the content pages will be injected
 2. When a page is merged with a master pages, all the content under the body element is used, and if only a partial part
