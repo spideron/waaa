@@ -50,13 +50,14 @@ waaa.start();
 Web server parameters
 ---------------------
 The following parameters can be supplied to the web server
-    *appFolder* (String) - the root folder of the site/application (i.e. /var/www/, /root/my_project/site, __dirname, etc.)
 
-    *confFolder* (String) - the folder of the configuration files (i.e. /var/www/conf, /root/my_project/site/conf, __dirname + '/conf/', etc.)
+    **appFolder** (String) - the root folder of the site/application (i.e. /var/www/, /root/my_project/site, __dirname, etc.)
 
-    *usePages* (Boolean) - enable the pages handling. true by default. When using this feature, a valid pages.json must exist in the configuration folder
+    **confFolder** (String) - the folder of the configuration files (i.e. /var/www/conf, /root/my_project/site/conf, __dirname + '/conf/', etc.)
 
-    *useModules* (Boolean) - enable the auto API handling. true by default. When using this feature, a valid modules.json must exist in the configuration folder
+    **usePages** (Boolean) - enable the pages handling. true by default. When using this feature, a valid pages.json must exist in the configuration folder
+
+    **useModules** (Boolean) - enable the auto API handling. true by default. When using this feature, a valid modules.json must exist in the configuration folder
                            port (Integer) - The web server port. default is 80.
 
 ```javascript
@@ -108,14 +109,14 @@ Configuration files
 }
 ```
 
-*master* - [optional] list of master pages
+**master** - [optional] list of master pages
 
     [master_name] - name of a master pages settings
 
         template - path to a relative master page template in the root of the app folder
 
 
-*pages* - [required] list of pages
+**pages** - [required] list of pages
 
     master - [optional] default master pages name for all the pages
     [page_name] - [required] the page name as it will be fetched (i.e. http://www.mysite.com/pages/[page_name])
@@ -150,9 +151,9 @@ Configuration files
 }
 ```
 
-*location* - [required] a relative path inside the app folder to the javascript modules
+**location** - [required] a relative path inside the app folder to the javascript modules
 
-*modules* - [required] list of modules to expose
+**modules** - [required] list of modules to expose
 
     [module_name] - [required] the module name to be used in the auto API (i.e. http://www.mysite.com/modules/[module_name])
 
