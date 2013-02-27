@@ -17,11 +17,13 @@ Problem 1: There are many cases where in the development process, the body which
  which sometimes does not even remotely looks like the current html content on the project end and the developer have
   a very hard time figuring out what needs to be changed and where.
 
+
 Problem 2: Many sites today have pages which act like applications using client code and ajax calls instead of browsing
     many pages. Some developers will create handler file(s) in order to support ajax calls to the server and then they
      will write the client side code to call these handlers. In some continuous projects there are many different handlers
      and matching javascript code to support it. Which lead to write over and over again the same code logic for different
      data and actions.
+
 
 This module comes to try and solve these problems by offering a web server which is build over express and let you keep
  the original html files and make templates out of them without any significant changes.
@@ -48,11 +50,14 @@ waaa.start();
 Web server parameters
 ---------------------
 The following parameters can be supplied to the web server
-appFolder (String) - the root folder of the site/application (i.e. /var/www/, /root/my_project/site, __dirname, etc.)
-confFolder (String) - the folder of the configuration files (i.e. /var/www/conf, /root/my_project/site/conf, __dirname + '/conf/', etc.)
-usePages (Boolean) - enable the pages handling. true by default. When using this feature, a valid pages.json must exist in the configuration folder
-useModules (Boolean) - enable the auto API handling. true by default. When using this feature, a valid modules.json must exist in the configuration folder
-port (Integer) - The web server port. default is 80.
+    *appFolder* (String) - the root folder of the site/application (i.e. /var/www/, /root/my_project/site, __dirname, etc.)
+
+    *confFolder* (String) - the folder of the configuration files (i.e. /var/www/conf, /root/my_project/site/conf, __dirname + '/conf/', etc.)
+
+    *usePages* (Boolean) - enable the pages handling. true by default. When using this feature, a valid pages.json must exist in the configuration folder
+
+    *useModules* (Boolean) - enable the auto API handling. true by default. When using this feature, a valid modules.json must exist in the configuration folder
+                           port (Integer) - The web server port. default is 80.
 
 ```javascript
 var waaa = require('waaa'),
@@ -103,20 +108,32 @@ Configuration files
 }
 ```
 
-master - [optional] list of master pages
+*master* - [optional] list of master pages
+
     [master_name] - name of a master pages settings
+
         template - path to a relative master page template in the root of the app folder
 
-pages - [required] list of pages
+
+*pages* - [required] list of pages
+
     master - [optional] default master pages name for all the pages
     [page_name] - [required] the page name as it will be fetched (i.e. http://www.mysite.com/pages/[page_name])
+
         title - [optional] text to set as the inside the page title element
+
         template - [required] path to a relative page template in the root of the app folder
+
         master - [optional] use a specific master page
+
         resources - [optional] - javascript and css to attach to this page
+
             js - [optional] - list of javascript paths to attach to page
+
             css - [optional] - list of css files to attach to page
+
                 url - [required] - path to the css file
+
                 attr - [optional] - list of key value collection to be used as attributes on the link element
 
 
@@ -133,12 +150,18 @@ pages - [required] list of pages
 }
 ```
 
-location - [required] a relative path inside the app folder to the javascript modules
-modules - [required] list of modules to expose
+*location* - [required] a relative path inside the app folder to the javascript modules
+
+*modules* - [required] list of modules to expose
+
     [module_name] - [required] the module name to be used in the auto API (i.e. http://www.mysite.com/modules/[module_name])
+
         location - [optional] override the modules location folder for this module
+
         fileName - [required] the module file name inside the modules folder
+
         methods - [optional] list of public methods in the module which should be exposed as part of the auto API
+
         properties - [optional] list of public properties in the module which should be exposed as part of the auto API
 
 
@@ -146,8 +169,10 @@ modules - [required] list of modules to expose
 Templates
 ---------
 Master pages are optional but when they are used, there are very basic rules to follow.
+
 1. In the master page declare an element with the id of "content", that's where the content pages will be injected
+
 2. When a page is merged with a master pages, all the content under the body element is used, and if only a partial part
-of the page is needed, use the ".bodyContent" class on an element which wraps the desired content
+    of the page is needed, use the ".bodyContent" class on an element which wraps the desired content
 
 
