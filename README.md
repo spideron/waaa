@@ -110,32 +110,32 @@ Configuration files
 
 **master** - [optional] list of master pages
 
-  [master_name] - name of a master pages settings
+&nbsp;&nbsp;[master_name] - name of a master pages settings
 
-    template - path to a relative master page template in the root of the app folder
+&nbsp;&nbsp;template - path to a relative master page template in the root of the app folder
 
 
 **pages** - [required] list of pages
 
-  master - [optional] default master pages name for all the pages
+&nbsp;&nbsp;master - [optional] default master pages name for all the pages
 
-  [page_name] - [required] the page name as it will be fetched (i.e. http://www.mysite.com/pages/[page_name])
+&nbsp;&nbsp;[page_name] - [required] the page name as it will be fetched (i.e. http://www.mysite.com/pages/[page_name])
 
-    title - [optional] text to set as the inside the page title element
+&nbsp;&nbsp;&nbsp;&nbsp;title - [optional] text to set as the inside the page title element
 
-    template - [required] path to a relative page template in the root of the app folder
+&nbsp;&nbsp;&nbsp;&nbsp;template - [required] path to a relative page template in the root of the app folder
 
-    master - [optional] use a specific master page
+&nbsp;&nbsp;&nbsp;&nbsp;master - [optional] use a specific master page
 
-    resources - [optional] - javascript and css to attach to this page
+&nbsp;&nbsp;&nbsp;&nbsp;resources - [optional] - javascript and css to attach to this page
 
-      js - [optional] - list of javascript paths to attach to page
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;js - [optional] - list of javascript paths to attach to page
 
-      css - [optional] - list of css files to attach to page
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;css - [optional] - list of css files to attach to page
 
-        url - [required] - path to the css file
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url - [required] - path to the css file
 
-        attr - [optional] - list of key value collection to be used as attributes on the link element
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;attr - [optional] - list of key value collection to be used as attributes on the link element
 
 
 ### modules.js
@@ -155,15 +155,15 @@ Configuration files
 
 **modules** - [required] list of modules to expose
 
-    [module_name] - [required] the module name to be used in the auto API (i.e. http://www.mysite.com/modules/[module_name])
+&nbsp;&nbsp;[module_name] - [required] the module name to be used in the auto API (i.e. http://www.mysite.com/modules/[module_name])
 
-        location - [optional] override the modules location folder for this module
+&nbsp;&nbsp;&nbsp;&nbsp;location - [optional] override the modules location folder for this module
 
-        fileName - [required] the module file name inside the modules folder
+&nbsp;&nbsp;&nbsp;&nbsp;fileName - [required] the module file name inside the modules folder
 
-        methods - [optional] list of public methods in the module which should be exposed as part of the auto API
+&nbsp;&nbsp;&nbsp;&nbsp;methods - [optional] list of public methods in the module which should be exposed as part of the auto API
 
-        properties - [optional] list of public properties in the module which should be exposed as part of the auto API
+&nbsp;&nbsp;&nbsp;&nbsp;properties - [optional] list of public properties in the module which should be exposed as part of the auto API
 
 
 
