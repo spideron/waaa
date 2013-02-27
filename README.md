@@ -47,6 +47,7 @@ var waaa = require('waaa');
 waaa.start();
 ```
 
+
 Web server parameters
 ---------------------
 The following parameters can be supplied to the web server
@@ -57,7 +58,10 @@ The following parameters can be supplied to the web server
 
 **usePages** (Boolean) - enable the pages handling. true by default. When using this feature, a valid pages.json must exist in the configuration folder
 
-**useModules** (Boolean) - enable the auto API handling. true by default. When using this feature, a valid modules.json must exist in the configuration folder port (Integer) - The web server port. default is 80.
+**useModules** (Boolean) - enable the auto API handling. true by default. When using this feature, a valid modules.json must exist in the configuration folder
+
+**port** (Integer) - The web server port. default is 80.
+
 
 ```javascript
 var waaa = require('waaa'),
@@ -65,6 +69,7 @@ var waaa = require('waaa'),
 
 waaa.start(options);
 ```
+
 
 Configuration files
 -------------------
@@ -114,7 +119,6 @@ Configuration files
 
 &nbsp;&nbsp;template - path to a relative master page template in the root of the app folder
 
-
 **pages** - [required] list of pages
 
 &nbsp;&nbsp;master - [optional] default master pages name for all the pages
@@ -151,6 +155,7 @@ Configuration files
 }
 ```
 
+
 **location** - [required] a relative path inside the app folder to the javascript modules
 
 **modules** - [required] list of modules to expose
@@ -166,7 +171,6 @@ Configuration files
 &nbsp;&nbsp;&nbsp;&nbsp;properties - [optional] list of public properties in the module which should be exposed as part of the auto API
 
 
-
 Templates
 ---------
 Master pages are optional but when they are used, there are very basic rules to follow.
@@ -175,5 +179,3 @@ Master pages are optional but when they are used, there are very basic rules to 
 
 2. When a page is merged with a master pages, all the content under the body element is used, and if only a partial part
     of the page is needed, use the ".bodyContent" class on an element which wraps the desired content
-
-
