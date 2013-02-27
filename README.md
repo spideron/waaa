@@ -51,14 +51,13 @@ Web server parameters
 ---------------------
 The following parameters can be supplied to the web server
 
-    **appFolder** (String) - the root folder of the site/application (i.e. /var/www/, /root/my_project/site, __dirname, etc.)
+**appFolder** (String) - the root folder of the site/application (i.e. /var/www/, /root/my_project/site, __dirname, etc.)
 
-    **confFolder** (String) - the folder of the configuration files (i.e. /var/www/conf, /root/my_project/site/conf, __dirname + '/conf/', etc.)
+**confFolder** (String) - the folder of the configuration files (i.e. /var/www/conf, /root/my_project/site/conf, __dirname + '/conf/', etc.)
 
-    **usePages** (Boolean) - enable the pages handling. true by default. When using this feature, a valid pages.json must exist in the configuration folder
+**usePages** (Boolean) - enable the pages handling. true by default. When using this feature, a valid pages.json must exist in the configuration folder
 
-    **useModules** (Boolean) - enable the auto API handling. true by default. When using this feature, a valid modules.json must exist in the configuration folder
-                           port (Integer) - The web server port. default is 80.
+**useModules** (Boolean) - enable the auto API handling. true by default. When using this feature, a valid modules.json must exist in the configuration folder port (Integer) - The web server port. default is 80.
 
 ```javascript
 var waaa = require('waaa'),
@@ -111,31 +110,32 @@ Configuration files
 
 **master** - [optional] list of master pages
 
-    [master_name] - name of a master pages settings
+  [master_name] - name of a master pages settings
 
-        template - path to a relative master page template in the root of the app folder
+    template - path to a relative master page template in the root of the app folder
 
 
 **pages** - [required] list of pages
 
-    master - [optional] default master pages name for all the pages
-    [page_name] - [required] the page name as it will be fetched (i.e. http://www.mysite.com/pages/[page_name])
+  master - [optional] default master pages name for all the pages
 
-        title - [optional] text to set as the inside the page title element
+  [page_name] - [required] the page name as it will be fetched (i.e. http://www.mysite.com/pages/[page_name])
 
-        template - [required] path to a relative page template in the root of the app folder
+    title - [optional] text to set as the inside the page title element
 
-        master - [optional] use a specific master page
+    template - [required] path to a relative page template in the root of the app folder
 
-        resources - [optional] - javascript and css to attach to this page
+    master - [optional] use a specific master page
 
-            js - [optional] - list of javascript paths to attach to page
+    resources - [optional] - javascript and css to attach to this page
 
-            css - [optional] - list of css files to attach to page
+      js - [optional] - list of javascript paths to attach to page
 
-                url - [required] - path to the css file
+      css - [optional] - list of css files to attach to page
 
-                attr - [optional] - list of key value collection to be used as attributes on the link element
+        url - [required] - path to the css file
+
+        attr - [optional] - list of key value collection to be used as attributes on the link element
 
 
 ### modules.js
