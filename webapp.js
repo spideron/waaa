@@ -67,3 +67,4 @@ function start(options) {
 exports.app = app;
 exports.start = start;
 exports.BaseModule = require('./lib/base_module.js');
+exports.db = require('./lib/db.js');
