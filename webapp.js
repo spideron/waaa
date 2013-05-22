@@ -62,9 +62,11 @@ function start(options) {
 
 
     app.listen(webAppOptions.port);
+
+    exports.db = require('./lib/db.js');
 }
 
+exports.express = express;
 exports.app = app;
 exports.start = start;
 exports.BaseModule = require('./lib/base_module.js');
-exports.db = require('./lib/db.js');
